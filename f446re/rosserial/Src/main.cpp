@@ -28,7 +28,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <ros.h>
+#include <ros/time.h>
 #include <std_msgs/String.h>
+#include <std_msgs/Int16.h>
+#include <sensor_msgs/Imu.h>
+#include <sensor_msgs/BatteryState.h>
+#include <std_msgs/Header.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -51,11 +56,26 @@
 /* USER CODE BEGIN PV */
 ros::NodeHandle nh;
 
+
 std_msgs::String str_msg;
+std_msgs::Int16 int_msg;
+std_msgs::Header header_msg;
+
+sensor_msgs::Imu imu_msg;
+sensor_msgs::BatteryState bat_msg;
+
 
 ros::Publisher chatter("chatter", &str_msg);
+ros::Publisher pub_header("/ACSL_BOARD/header", &header_msg);
+ros::Publisher pub_int("/ACSL_BOARD/ID",  &int_msg);
+ros::Publisher pub_imu("/ACSL_BOARD/imu", &imu_msg);
+ros::Publisher pub_bat("/ACSL_BOARD/bat", &bat_msg);
+
 
 char hello[] = "Hello world!";
+int ACSL_ID = 0xAC5101;
+
+sensor_msgs::BatteryState bat_state;
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
   nh.getHardware()->flush();
@@ -118,6 +138,10 @@ int main(void)
 
   nh.initNode();
   nh.advertise(chatter);
+  //nh.advertise(pub_int);
+  nh.advertise(pub_header);
+  //nh.advertise(pub_imu);
+  //nh.advertise(pub_bat);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -131,10 +155,25 @@ int main(void)
 	  hello[11]++;
 	  if(hello[11] > 127)
 		  hello[11] = 0;
+
+	  int_msg.data = ACSL_ID;
+
+	  bat_msg = bat_state;
+
+	  header_msg.seq++;
+	  header_msg.frame_id = "ACSL header";
+	  header_msg.stamp = nh.now();
+
+
 	  chatter.publish(&str_msg);
+	  //pub_int.publish(&int_msg);
+	  pub_header.publish(&header_msg);
+
+	  //pub_imu.publish(&imu_msg);
+	  //pub_bat.publish(&bat_msg);
 	  nh.spinOnce();
 
-	  HAL_Delay(100);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 }
