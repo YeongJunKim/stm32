@@ -1,0 +1,21 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/colson/catkin_ws/devel/include",
+        "/opt/ros/kinetic/include",
+        "/home/colson/catkin_ws/src/acsl_drone/dji_sdk/include",
+        "/home/colson/catkin_ws/src/acsl_drone/dji_sdk_demo/include",
+        "/home/colson/catkin_ws/src/key_input/include",
+        "/home/colson/catkin_ws/src/rosserial/rosserial_server/include",
+        "/home/colson/catkin_ws/src/rosserial/rosserial_test/include",
+        "/usr/include"
+      ],
+      "name": "Linux"
+    }
+  ]
+}
