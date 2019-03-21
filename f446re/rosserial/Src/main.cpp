@@ -127,10 +127,13 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 	  str_msg.data = hello;
+	  hello[11]++;
+	  if(hello[11] > 127)
+		  hello[11] = 0;
 	  chatter.publish(&str_msg);
 	  nh.spinOnce();
 
-	  HAL_Delay(1000);
+	  HAL_Delay(100);
   }
   /* USER CODE END 3 */
 }
