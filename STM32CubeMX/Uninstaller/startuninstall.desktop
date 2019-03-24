@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=startuninstall
+Comment=Start the STM32CubeMX uninstaller
+Exec=java -jar /home/colson/STM32CubeMX/Uninstaller/uninstaller.jar
+Terminal=false
+Type=Application
+StartupNotify=true
+Icon=/home/colson/STM32CubeMX/Uninstaller/uninstall.ico
+GenericName[en_US.UTF-8]=startuninstall
