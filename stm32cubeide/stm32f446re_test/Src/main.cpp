@@ -132,8 +132,6 @@ int main(void)
   MX_UART5_Init();
   /* USER CODE BEGIN 2 */
 
-
-
   nh.initNode();
   nh.advertise(pub_chat);
   /* USER CODE END 2 */
