@@ -1,4 +1,4 @@
-Src/main.o: ../Src/main.c ../Inc/main.h \
+Src/main.o: ../Src/main.cpp ../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -28,7 +28,29 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h ../Inc/can.h \
- ../Inc/main.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h
+ ../Inc/main.h ../Inc/dma.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/time.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/duration.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/node_handle.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Time.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/msg.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/TopicInfo.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/Log.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/RequestParam.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/publisher.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/node_handle.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/subscriber.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/service_server.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/service_client.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/STM32Hardware.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/String.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Int16.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/sensor_msgs/Imu.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Header.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/geometry_msgs/Quaternion.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/geometry_msgs/Vector3.h \
+ /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/sensor_msgs/BatteryState.h
 
 ../Inc/main.h:
 
@@ -94,8 +116,54 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 
 ../Inc/main.h:
 
+../Inc/dma.h:
+
 ../Inc/tim.h:
 
 ../Inc/usart.h:
 
 ../Inc/gpio.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/time.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/duration.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/node_handle.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Time.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/msg.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/TopicInfo.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/Log.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/rosserial_msgs/RequestParam.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/publisher.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/node_handle.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/subscriber.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/service_server.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/ros/service_client.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/STM32Hardware.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/String.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Int16.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/sensor_msgs/Imu.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/std_msgs/Header.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/geometry_msgs/Quaternion.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/geometry_msgs/Vector3.h:
+
+/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/Inc/ROS/sensor_msgs/BatteryState.h:

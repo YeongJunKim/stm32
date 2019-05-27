@@ -21,9 +21,18 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "can.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+
+#include <ros/time.h>
+#include <ros.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Int16.h>
+#include <sensor_msgs/Imu.h>
+#include <sensor_msgs/BatteryState.h>
+#include <std_msgs/Header.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -48,7 +57,25 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+ros::NodeHandle nh;
 
+
+std_msgs::String str_msg;
+
+
+ros::Publisher pub_chat("chatter", &str_msg);
+
+
+char hello[] = "Hello world!";
+
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
+  nh.getHardware()->flush();
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+  nh.getHardware()->reset_rbuf();
+}
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,6 +118,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
@@ -104,6 +132,10 @@ int main(void)
   MX_UART5_Init();
   /* USER CODE BEGIN 2 */
 
+
+
+  nh.initNode();
+  nh.advertise(pub_chat);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -111,7 +143,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	  str_msg.data = hello;
+	  hello[11]++;
+	  if(hello[11] > 127)
+		  hello[11] = 0;
 
+
+	  pub_chat.publish(&str_msg);
+	  nh.spinOnce();
+
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -52,8 +52,8 @@ stm32f446re_test.list \
 all: stm32f446re_test.elf secondary-outputs
 
 # Tool invocations
-stm32f446re_test.elf: $(OBJS) $(USER_OBJS) /home/colson/workspace/stm32cubeide/stm32f446re_test/STM32F446RETX_FLASH.ld
-	arm-none-eabi-g++ -o "stm32f446re_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/colson/workspace/stm32cubeide/stm32f446re_test/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f446re_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+stm32f446re_test.elf: $(OBJS) $(USER_OBJS) /home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/STM32F446RETX_FLASH.ld
+	arm-none-eabi-g++ -o "stm32f446re_test.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/colson/catkin_ws/stm32/stm32cubeide/stm32f446re_test/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f446re_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
