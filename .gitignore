@@ -1,4 +1,4 @@
 .metadata/
 stm32cubeide/stm32f446re_test/Debug/
-gitignore.swp
+.gitignore.swp
 .~bashrc.swp
