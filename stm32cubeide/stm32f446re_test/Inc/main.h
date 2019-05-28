@@ -66,6 +66,10 @@ void Error_Handler(void);
 #define motor2_GPIO_Port GPIOC
 #define motor3_Pin GPIO_PIN_3
 #define motor3_GPIO_Port GPIOC
+#define encoder0_ch1_Pin GPIO_PIN_0
+#define encoder0_ch1_GPIO_Port GPIOA
+#define encoder0_ch2_Pin GPIO_PIN_1
+#define encoder0_ch2_GPIO_Port GPIOA
 #define ABS0_0_Pin GPIO_PIN_4
 #define ABS0_0_GPIO_Port GPIOA
 #define ABS0_1_Pin GPIO_PIN_5
@@ -90,6 +94,18 @@ void Error_Handler(void);
 #define ABS3_1_GPIO_Port GPIOB
 #define ABS3_2_Pin GPIO_PIN_15
 #define ABS3_2_GPIO_Port GPIOB
+#define encoder1_ch1_Pin GPIO_PIN_6
+#define encoder1_ch1_GPIO_Port GPIOC
+#define encoder1_ch2_Pin GPIO_PIN_7
+#define encoder1_ch2_GPIO_Port GPIOC
+#define encoder2_ch1_Pin GPIO_PIN_4
+#define encoder2_ch1_GPIO_Port GPIOB
+#define encoder2_ch2_Pin GPIO_PIN_5
+#define encoder2_ch2_GPIO_Port GPIOB
+#define encoder3_ch1_Pin GPIO_PIN_6
+#define encoder3_ch1_GPIO_Port GPIOB
+#define encoder3_ch2_Pin GPIO_PIN_7
+#define encoder3_ch2_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
