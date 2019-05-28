@@ -67,7 +67,7 @@ ros::Publisher pub_chat("chatter", &str_msg);
 ros::Publisher pub_device("dev_info", &str_device);
 
 char hello[] = "Hello world!";
-char device_info[] = "STM32F446RE";
+char device_info[] = "STM32F446RE\nACSL_interface_board\nDesigned by YeongJunKim\ncolson@korea.ac.kr";
 
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
@@ -135,6 +135,7 @@ int main(void)
 
   nh.initNode();
   nh.advertise(pub_chat);
+  nh.advertise(pub_device);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -151,7 +152,7 @@ int main(void)
 
 
 	  pub_chat.publish(&str_msg);
-	  //pub_device.publish(&str_device);
+	  pub_device.publish(&str_device);
 	  nh.spinOnce();
 
 	  HAL_Delay(100);
