@@ -67,7 +67,7 @@ ros::Publisher pub_chat("chatter", &str_msg);
 ros::Publisher pub_device("dev_info", &str_device);
 
 char hello[] = "Hello world!";
-char device_info[] = "STM32F446RE\nACSL_interface_board\nDesigned by YeongJunKim\ncolson@korea.ac.kr";
+char device_info[] = "STM32F446RE\r\nACSL_interface_board\r\nDesigned by YeongJunKim\r\ncolson@korea.ac.kr";
 
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
@@ -77,6 +77,8 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
    nh.getHardware()->reset_rbuf();
 }
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -149,13 +151,14 @@ int main(void)
 	  if(hello[11] > 127)
 		  hello[11] = 0;
 
-
-
 	  pub_chat.publish(&str_msg);
 	  pub_device.publish(&str_device);
+
+
+
 	  nh.spinOnce();
 
-	  HAL_Delay(100);
+	  HAL_Delay(50);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
