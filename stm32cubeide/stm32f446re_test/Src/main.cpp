@@ -61,12 +61,13 @@ ros::NodeHandle nh;
 
 
 std_msgs::String str_msg;
-
+std_msgs::String str_device;
 
 ros::Publisher pub_chat("chatter", &str_msg);
-
+ros::Publisher pub_device("dev_info", &str_device);
 
 char hello[] = "Hello world!";
+char device_info[] = "STM32F446RE";
 
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
@@ -74,7 +75,7 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 }
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
-  nh.getHardware()->reset_rbuf();
+   nh.getHardware()->reset_rbuf();
 }
 /* USER CODE END PV */
 
@@ -142,15 +143,18 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  str_msg.data = hello;
+	  str_device.data = device_info;
 	  hello[11]++;
 	  if(hello[11] > 127)
 		  hello[11] = 0;
 
 
+
 	  pub_chat.publish(&str_msg);
+	  //pub_device.publish(&str_device);
 	  nh.spinOnce();
 
-	  HAL_Delay(1000);
+	  HAL_Delay(100);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

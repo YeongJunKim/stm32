@@ -98,14 +98,6 @@ void Error_Handler(void);
 #define encoder1_ch1_GPIO_Port GPIOC
 #define encoder1_ch2_Pin GPIO_PIN_7
 #define encoder1_ch2_GPIO_Port GPIOC
-#define pwm0_Pin GPIO_PIN_8
-#define pwm0_GPIO_Port GPIOA
-#define pwm1_Pin GPIO_PIN_9
-#define pwm1_GPIO_Port GPIOA
-#define pwm2_Pin GPIO_PIN_10
-#define pwm2_GPIO_Port GPIOA
-#define pwm3_Pin GPIO_PIN_11
-#define pwm3_GPIO_Port GPIOA
 #define encoder2_ch1_Pin GPIO_PIN_4
 #define encoder2_ch1_GPIO_Port GPIOB
 #define encoder2_ch2_Pin GPIO_PIN_5
