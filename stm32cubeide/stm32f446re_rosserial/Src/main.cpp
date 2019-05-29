@@ -63,6 +63,8 @@ ros::NodeHandle nh;
 std_msgs::String str_msg;
 std_msgs::String str_device;
 
+
+
 ros::Publisher pub_chat("chatter", &str_msg);
 ros::Publisher pub_device("dev_info", &str_device);
 
